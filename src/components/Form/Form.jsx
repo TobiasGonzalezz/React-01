@@ -15,11 +15,11 @@ const Form = (props) => {
     const handleSubmit = (event) => {
         event.preventDefault()
         if ((props.user.name === props.account.name && props.user.email === props.account.email && props.user.password === props.account.password)) {
-            console.log( "Bienvenido!", {...props.user})
+            console.log("Bienvenido!", { ...props.user })
             props.setError(true);
             setErrorMessage(false);
 
-        }else{
+        } else {
             console.log('datos inconrrectos')
             props.setError(false);
             setErrorMessage(true);
@@ -28,13 +28,13 @@ const Form = (props) => {
 
     return (<Fragment>
         <main className='container'>
-            <h1 className='container__title'>Formulario</h1>
-            <p className='container__error' id={ errorMessage ? 'error_message' : 'none'}>Datos inconrrectos</p>
-            <form name='login' className='login' onSubmit={handleSubmit}>
-                <input name='name' type="text" className='inputLogin' placeholder='Ingrese su nombre' onChange={handleInputChange} required />
-                <input name='email' type="email" className='inputLogin' placeholder='Ingrese su email' onChange={handleInputChange} required/>
+            <form name='login' className='form' onSubmit={handleSubmit}>
+                <h1 className='container__title'>Formulario</h1>
+                <p className='container__error' id={errorMessage ? 'error_message' : 'none'}>Datos inconrrectos</p>
+                <input name='name' type="text" className='form__data' placeholder='Ingrese su nombre' onChange={handleInputChange} required />
+                <input name='email' type="email" className='form__data' placeholder='Ingrese su email' onChange={handleInputChange} required />
                 <br />
-                <input name='password' type="password" className='inputLogin' placeholder='Ingrese su contraseña' onChange={handleInputChange} required/>
+                <input name='password' type="password" className='form__data' placeholder='Ingrese su contraseña' onChange={handleInputChange} required />
                 <br />
                 <button type="submit">Login</button>
             </form>

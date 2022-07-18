@@ -29,7 +29,7 @@ function App() {
       {(error) ? (
         <div className='welcome'>
           <h2>Bienvenido! <span>{data.name}</span> </h2>
-          <button onClick={logout}>Logout</button>
+          <button type="submit" onClick={logout}>Logout</button>
         </div>
       ) : (<Form setInfo={setData} user={data} account={account} setError={setError} error={error}></Form>)}
     </div>
