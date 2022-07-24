@@ -4,28 +4,28 @@
     box-sizing: border-box;
 }
 
-input,
-button {
+.App {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.form__input,
+.form__button {
     appearance: none;
     background: none;
     border: none;
     outline: none;
 }
 
-.App {
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: rgba(102, 31, 160, 0.308);
-}
-
-main {
+.container__form {
     display: block;
     position: relative;
 }
 
-main::after {
+.container__form::after {
     content: "";
     display: block;
     position: absolute;
@@ -37,7 +37,7 @@ main::after {
     background-image: linear-gradient(to bottom right, rgb(255, 238, 0), rgb(199, 0, 116));
 }
 
-.form{
+.form {
     position: relative;
     display: block;
     background-color: aliceblue;
@@ -45,20 +45,20 @@ main::after {
     z-index: 2;
 }
 
-.form__data{
+.form__input {
     color: rgb(30, 30, 31);
     font-size: 28px;
     font-weight: 500;
     margin-bottom: 30px;
 }
 
-.form__data{
+.form__input {
     display: block;
     width: 300px;
     margin-bottom: 15px;
 }
 
-input{
+.form__input {
     display: block;
     width: 100%;
     padding: 10px 15px;
@@ -67,13 +67,15 @@ input{
     transition: 0.4s;
 }
 
-input:focus{
+.form__input:focus {
     box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.2);
 }
-input:focus-within{
+
+.form__input:focus-within {
     background-color: rgb(247, 225, 103);
 }
-button[type="submit"]{
+
+.form__button[type="submit"] {
     display: inline-block;
     padding: 10px 15px;
     border-radius: 8px;
@@ -86,25 +88,26 @@ button[type="submit"]{
     cursor: pointer;
 }
 
-button[type="submit"]:hover{
+.form__button[type="submit"]:hover {
     background-position: 100% 0%;
 }
 
-.welcome{
+.welcome {
     width: 100%;
     max-width: 480px;
-    background-color: aliceblue ;
+    background-color: aliceblue;
     padding: 15px 30px;
 }
 
-.welcome h2{
+.welcome h2 {
     color: rgb(0, 0, 0);
     font-size: 28px;
     font-weight: 500;
     margin-bottom: 30px;
 }
 
-.welcome h2 span, .container__error{
+.welcome h2 span,
+.container__error {
     color: brown;
     font-weight: 700;
 }

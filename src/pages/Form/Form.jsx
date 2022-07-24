@@ -4,7 +4,6 @@ import './Form.css'
 const Form = (props) => {
     const [errorMessage, setErrorMessage] = useState(false)
 
-
     const handleInputChange = (event) => {
         props.setInfo({
             ...props.user,
@@ -27,16 +26,16 @@ const Form = (props) => {
     }
 
     return (<Fragment>
-        <main className='container'>
+        <main className='container__form'>
             <form name='login' className='form' onSubmit={handleSubmit}>
                 <h1 className='container__title'>Formulario</h1>
                 <p className='container__error' id={errorMessage ? 'error_message' : 'none'}>Datos inconrrectos</p>
-                <input name='name' type="text" className='form__data' placeholder='Ingrese su nombre' onChange={handleInputChange} required />
-                <input name='email' type="email" className='form__data' placeholder='Ingrese su email' onChange={handleInputChange} required />
+                <input name='name' type="text" className='form__input' placeholder='Ingrese su nombre' onChange={handleInputChange} required />
+                <input name='email' type="email" className='form__input' placeholder='Ingrese su email' onChange={handleInputChange} required />
                 <br />
-                <input name='password' type="password" className='form__data' placeholder='Ingrese su contraseña' onChange={handleInputChange} required />
+                <input name='password' type="password" className='form__input' placeholder='Ingrese su contraseña' onChange={handleInputChange} required />
                 <br />
-                <button type="submit">Login</button>
+                <button className="form__button" type="submit">Login</button>
             </form>
         </main>
     </Fragment>)
